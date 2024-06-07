@@ -45,6 +45,8 @@ Por fim, no registro de informações sobre os instrumentos musicais, deve conte
 
 ## ➡️Modelagem Conceitual:
 
+![modelo](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/modelo-conceitual.png)
+
 
 ## ➡️Modelagem Lógica:
 
