@@ -49,5 +49,6 @@ Por fim, no registro de informações sobre os instrumentos musicais, deve conte
 
 
 ## ➡️Modelagem Lógica:
+![](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/modelo-l%C3%B3gico.png)
 
 
