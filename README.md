@@ -249,6 +249,7 @@ SELECT Nome, Descrição, Duração, Preço FROM Curso;
 
 ### 🟢 Aulas por Professor em uma data específica:
 Esta consulta tem como objetivo selecionar e exibir todas as aulas ministradas por um professor em uma data específica, contendo, ID_Aula, Data, Horário e Local.
+```sql
 SELECT a.ID_Aula, a.Data, a.Horário, a.Local
 FROM Aula a
 JOIN Professor p ON a.ID_Professor = p.ID_Professor
