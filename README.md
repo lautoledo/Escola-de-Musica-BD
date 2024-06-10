@@ -144,15 +144,120 @@ Resultado:
 ![delete](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/delete.png)
 
 ## ➡️7- Relatórios:
+Nesta etapa, foram realizadas 10 consultas utilizando Seleção, Filtro e Ordenação, confira o desenvolvimento:
 
 ### 🟢 Alunos e seus Cursos:
-Esta consulta tem como objetivo selecionar nomes de alunos e os cursos noos quais estão matriculados.
+Esta consulta tem como objetivo selecionar e exibir nomes de alunos e os cursos nos quais estão matriculados.
 ```sql
 SELECT a.Nome AS Aluno, c.Nome AS Curso
 FROM Aluno a
 JOIN Aluno_Curso ac ON a.ID_Aluno = ac.ID_Aluno
 JOIN Curso c ON ac.ID_Curso = c.ID_Curso;
 ```
+* Confira o resultado:
+
+![consulta1](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta1.png)
+
+
+### 🟢 Professores e suas Aulas::
+Esta consulta tem como objetivo selecionar e exibir nomes de professores e suas aulas, contendo informações como, ID_Aula, Data, Horário e Local.
+```sql
+SELECT p.Nome AS Professor, a.ID_Aula, a.Data, a.Horário, a.Local
+FROM Professor p
+JOIN Aula a ON p.ID_Professor = a.ID_Professor;
+```
+* Confira o resultado:
+
+![consulta2](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta2.png)
+
+### 🟢 Instrumentos usados por Alunos:
+Esta consulta tem como objetivo selecionar e exibir nomes de alunos e quais são os instrumentos utilizados por eles.
+```sql
+SELECT al.Nome AS Aluno, i.Nome AS Instrumento
+FROM Aluno al
+JOIN Aluno_Instrumento ai ON al.ID_Aluno = ai.ID_Aluno
+JOIN Instrumento i ON ai.ID_Instrumento = i.ID_Instrumento;
+```
+* Confira o resultado:
+
+![consulta3](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta3.png)
+
+### 🟢 Cursos e Professores responsáveis:
+Esta consulta tem como objetivo selecionar e exibir cursos e nomes dos professores que são responsáveis e ministram respectivamente cada.
+```sql
+SELECT c.Nome AS Curso, p.Nome AS Professor
+FROM Curso c
+JOIN Professor p ON c.ID_Curso = p.ID_Professor;
+```
+* Confira o resultado:
+
+![consulta4](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta4.png)
+
+### 🟢 Aulas de um determinado Curso:
+Esta consulta tem como objetivo selecionar e exibir aulas de um determinado curso, no qual é possível obter informações do ID_Aula, Data, Horário e Local.
+```sql
+SELECT a.ID_Aula, a.Data, a.Horário, a.Local
+FROM Aula a
+JOIN Curso c ON a.ID_Curso = c.ID_Curso
+WHERE c.ID_Curso = 1;
+```
+* Confira o resultado:
+
+![consulta5](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta5.png)
+
+### 🟢 Quantidade de Alunos por Curso:
+Esta consulta tem como objetivo exibir a quantidade de alunos matriculados em cada curso.
+```sql
+SELECT c.Nome AS Curso, COUNT(ac.ID_Aluno) AS Quantidade_Alunos
+FROM Curso c
+JOIN Aluno_Curso ac ON c.ID_Curso = ac.ID_Curso
+GROUP BY c.ID_Curso, c.Nome;
+```
+* Confira o resultado:
+
+![consulta6](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta6.png)
+
+### 🟢 Professores e seus Salários:
+Esta consulta tem como objetivo selecionar e exibir nomes de professores e os seus respectivos salários.
+```sql
+SELECT Nome, Salário FROM Professor;
+```
+* Confira o resultado:
+
+![consulta7](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta7.png)
+
+
+### 🟢 Alunos e seus Telefones:
+Esta consulta tem como objetivo selecionar e exibir nomes de alunos e o número de telefone de cada um.
+```sql
+SELECT Nome, Telefone FROM Aluno;
+```
+* Confira o resultado:
+
+![consulta8](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta8.png)
+
+
+### 🟢 Cursos disponíveis:
+Esta consulta tem como objetivo exibir os cursos disponíveis e informações como, Descrição, Duração e Preço.
+```sql
+SELECT Nome, Descrição, Duração, Preço FROM Curso;
+```
+* Confira o resultado:
+
+![consulta9](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta9.png)
+
+
+### 🟢 Aulas por Professor em uma data específica:
+Esta consulta tem como objetivo selecionar e exibir todas as aulas ministradas por um professor em uma data específica, contendo, ID_Aula, Data, Horário e Local.
+SELECT a.ID_Aula, a.Data, a.Horário, a.Local
+FROM Aula a
+JOIN Professor p ON a.ID_Professor = p.ID_Professor
+WHERE p.ID_Professor = 3 AND a.Data = '2024-06-03';
+```
+* Confira o resultado:
+
+![consulta10](https://github.com/lautoledo/Escola-de-Musica-BD/blob/main/imagens/consulta10.png)
+
 
 
 
