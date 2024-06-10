@@ -43,6 +43,13 @@ Por fim, no registro de informações sobre os instrumentos musicais, deve conte
 * Marca
 * Preço (atributo derivado)
 
+### Relacionamentos:
+* Aluno-Curso: Um aluno pode se matricular em vários cursos (N:N) e um curso pode ter vários alunos.
+* Curso-Professor: Um curso é ministrado por um professor (1:N) e um professor pode ministrar vários cursos.
+* Curso-Aula: Um curso tem várias aulas (1:N) e uma aula pertence a um curso.
+* Aluno-Instrumento: Um aluno pode usar vários instrumentos (N:N) e um instrumento pode ser usado por vários alunos.
+* Aula-Professor: Uma aula é ministrada por um professor (1:1).
+
 ## ➡️2- Modelagem Conceitual:
 Confira a modelagem conceitual desenvolvida:
 
